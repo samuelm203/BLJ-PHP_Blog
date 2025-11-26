@@ -1,0 +1,40 @@
+<?php
+    require "views/templates/header.php"
+?>
+
+<?php
+
+?>
+
+
+<div class="container">
+    <section class="write">
+        <div class="write-title-banner">Blog schreiben</div>
+
+        <div class="editor-card">
+            <form action="" method="post">
+                <div class="field-group">
+                    <label for="title" class="field-label">Titel</label>
+                    <input type="text" id="title" name="title" class="input" placeholder="Lorem Ipsum" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="content" class="field-label">Inhalt</label>
+                    <textarea id="content" name="content" class="textarea" rows="3" placeholder="Schreibe deinen Blogbeitrag hier…" required></textarea>
+                </div>
+
+                <div class="actions">
+                    <div class="field-group image-field-group">
+                        <lael for="image" class="field-label">Bild</lael>
+                        <textarea id="text-image" name="image" class="textarea" rows="1" placeholder="Füge hier ein Bildlink ein…"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send it</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+<footer>
+    ©2025 by Samuel Ming
+</footer>
