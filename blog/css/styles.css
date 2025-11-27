@@ -620,3 +620,16 @@ footer {
     gap: 16px;
     position: relative;
 }
+
+.about-card-mysocial-title {
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+.about-card-mysocial {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
