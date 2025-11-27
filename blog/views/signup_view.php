@@ -30,3 +30,7 @@ require "views/templates/header.php";
         </div>
     </form>
 </div>
+
+<footer>
+    <?php require "views/templates/footer.php" ?>
+</footer>

@@ -21,3 +21,7 @@
         </div>
     </form>
 </div>
+
+<footer>
+    <?php require "views/templates/footer.php" ?>
+</footer>
