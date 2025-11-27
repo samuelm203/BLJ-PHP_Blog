@@ -32,5 +32,5 @@
 </div>
 
 <footer>
-    ©2025 by Samuel Ming
+    <?php require "views/templates/footer.php" ?>
 </footer>

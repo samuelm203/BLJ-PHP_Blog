@@ -13,3 +13,4 @@ $stmt = $pdo->prepare("
 
 $stmt->execute();
 $posts = $stmt->fetchAll();
+

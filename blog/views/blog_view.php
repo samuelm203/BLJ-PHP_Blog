@@ -6,8 +6,6 @@ if (!isset($posts) || !is_array($posts)) {
     $posts = [];
 }
 
-if (empty($Image))
-
 ?>
 
 <div class="read">
@@ -19,7 +17,12 @@ if (empty($Image))
 
             <div class="img-p-container">
                 <p class="post-card-text"><?= htmlspecialchars($post["Content"]) ?></p>
-                <img src="<?= htmlspecialchars($post["Image"])?>" class="post-card-img" alt="User input Image">
+                <?php
+                if (empty($post["Image"])) {
+                    echo "";
+                } else {
+                    echo '<img src="' . htmlspecialchars($post["Image"]) . '" class="post-card-img" alt="User input Image">';                }
+                ?>
             </div>
 
             <p>Geschrieben von:

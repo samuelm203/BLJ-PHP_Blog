@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $image = filter_var(trim($_POST['image'] ?? ''), FILTER_SANITIZE_URL);
 
+        //Todo: Muss mit UserID aus Session ersetzt werden
+
         $userID = 1;
 
         if (empty($title) || empty($content)) {
@@ -33,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':userID' => $userID
         ]);
 
-        header('Location: read?status=success');
+        header('Location: write');
         exit;
 
     } catch (Exception $e) {
