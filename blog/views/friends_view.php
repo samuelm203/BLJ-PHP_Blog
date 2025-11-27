@@ -1,53 +1,36 @@
 <?php
-    require "views/templates/header.php"
+require "views/templates/header.php";
+
+$pdo = new PDO(
+        'mysql:host=10.10.20.188;dbname=urs',
+        'bljuser',
+        'hallo123',
+        [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+        ]
+);
+
+$stmt = $pdo->prepare('SELECT * FROM bljblogs');
+$stmt->execute();
+$bloggers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="container">
     <section class="friends">
-        <div class="friends-title-banner">BLJ-Kollegen</div>
-
-        <div class="friends-filters">
-            <button class="chip active" type="button" aria-pressed="true">Alle</button>
-            <button class="chip" type="button" aria-pressed="false">CSS</button>
-            <button class="chip" type="button" aria-pressed="false">Richi</button>
-        </div>
+        <div class="friends-title-banner">BLJ</div>
 
         <div class="friends-grid">
-            <div class="friend-card">Richi</div>
-            <div class="friend-card">Neville</div>
-            <div class="friend-card">Damir</div>
-            <div class="friend-card">Nik</div>
-            <div class="friend-card">Romeo</div>
-
-            <div class="friend-card">Dario W.</div>
-            <div class="friend-card">Manuel</div>
-            <div class="friend-card">Urs</div>
-            <div class="friend-card">Bryan</div>
-            <div class="friend-card">...</div>
-
-            <div class="friend-card">...</div>
-            <div class="friend-card">...</div>
-            <div class="friend-card">...</div>
-            <div class="friend-card">...</div>
-            <div class="friend-card">...</div>
-
-
+            <?php foreach ($bloggers as $blogger): ?>
+                <div class="friend-card">
+                    <a class="friend-card-name" target="_blank"
+                       href="<?= htmlspecialchars($blogger["blog_url"]) ?>"
+                       class="friend-name-link">
+                        <?= htmlspecialchars($blogger["name_lernender"]) ?>
+                    </a>
+                </div>
+            <?php endforeach; ?>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var chips = document.querySelectorAll('.friends-filters .chip');
-                chips.forEach(function (chip) {
-                    chip.addEventListener('click', function () {
-                        chips.forEach(function (c) {
-                            c.classList.remove('active');
-                            c.setAttribute('aria-pressed', 'false');
-                        });
-                        chip.classList.add('active');
-                        chip.setAttribute('aria-pressed', 'true');
-                    });
-                });
-            });
-        </script>
     </section>
 
     <footer>

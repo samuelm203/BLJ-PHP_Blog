@@ -21,13 +21,14 @@ if (!isset($posts) || !is_array($posts)) {
                 if (empty($post["Image"])) {
                     echo "";
                 } else {
-                    echo '<img src="' . htmlspecialchars($post["Image"]) . '" class="post-card-img" alt="User input Image">';                }
+                    echo '<img src="' . htmlspecialchars($post["Image"]) . '" class="post-card-img" alt="User input Image">';
+                }
                 ?>
             </div>
 
-            <p>Geschrieben von:
+            <p>Written by
                 <span class="post-card-creator"><?= htmlspecialchars($post["Autor"]) ?></span>
-                am
+                on
                 <span class="post-card-date"><?= htmlspecialchars($post["Timestamp"]) ?></span>
             </p>
         </div>
