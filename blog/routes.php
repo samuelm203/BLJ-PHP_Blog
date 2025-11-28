@@ -11,7 +11,8 @@ $routes = [
     'login'             => 'views/login_view.php',
     'signup'            => 'views/signup_view.php',
     'logout'            => 'core/logout.php',
-    'profil'            => 'views/profil_view.php'
+    'profil'            => 'views/profil_view.php',
+    '503'               => 'views/notfinished_view.php'
 ];
 
 if (array_key_exists($page, $routes)) {

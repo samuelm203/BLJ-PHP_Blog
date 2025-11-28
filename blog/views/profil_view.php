@@ -65,11 +65,13 @@ try {
     <div class="profil-card-options">
         <a href="logout" class="nav-link">Log out</a>
 
-        <a href="#" class="nav-link change-password-box">Change Password</a>
+        <a href="503" class="nav-link change-password-box">Change Password</a>
 
-        <a href="" class="nav-link">Change Email</a>
-        <a href="" class="nav-link">Change Username</a>
-        <a href="" class="nav-link">Delete your Account</a>
+        <a href="503" class="nav-link">See my post's</a>
+
+        <a href="503" class="nav-link">Change Email</a>
+
+        <a href="503" class="nav-link">Delete your Account</a>
     </div>
 </div>
 
