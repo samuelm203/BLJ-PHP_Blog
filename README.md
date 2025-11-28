@@ -72,20 +72,6 @@ Static counts based on the repository at the time of writing:
 - Models: 7
 - Views (including templates): 11
 
-Want up-to-date stats on your machine? Run one of the following in PowerShell from the `blog` folder:
-
-```
-# Count files by extension
-Get-ChildItem -Recurse | Group-Object { $_.Extension } | Sort-Object Count -Descending | Select-Object Count, Name
-
-# Count PHP files
-(Get-ChildItem -Recurse -Filter *.php | Measure-Object).Count
-
-# Lines of code (rough): PHP + CSS + routes + index
-(Get-ChildItem -Recurse -Include *.php,*.css | Get-Content | Measure-Object -Line).Lines
-```
-
-
 ## 🚀 Getting Started (Local with XAMPP)
 
 1. Place the project under your XAMPP `htdocs` folder as `C:\xampp\htdocs\blog`.
